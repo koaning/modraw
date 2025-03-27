@@ -1,6 +1,6 @@
 # modraw 
 
-<img src="imgs/stuff.png" width=125 height=125 align="right" style="z-index: 9999;">
+<img src="imgs/icon.png" width=125 height=125 align="right" style="z-index: 9999;">
 
 > "A collection of [tldraw](https://www.tldraw.com/) based anywidgets for marimo, but also other Python notebooks."
 
