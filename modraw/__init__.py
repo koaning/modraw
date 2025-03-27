@@ -1,3 +1,4 @@
+import base64
 from typing import List
 from pathlib import Path
 import anywidget
@@ -16,8 +17,7 @@ def base64_to_pil(base64_string):
     img_data = base64.b64decode(base64_string)
 
     # Create PIL Image from bytes
-    img = Image.open(BytesIO(img_data))
-    return img
+    return Image.open(BytesIO(img_data))
 
 
 class Draw(anywidget.AnyWidget):
@@ -33,7 +33,9 @@ class Draw(anywidget.AnyWidget):
         super().__init__(width=width, height=height, **kwargs)
     
     def get_pil(self) -> Image.Image:
-        return Image.open(BytesIO(base64_to_pil(self.base64)))
+        if not self.base64:
+            raise ValueError("No base64 image data available, make sure you draw something first.")
+        return base64_to_pil(self.base64)
 
     def get_base64(self) -> str:
         return self.base64

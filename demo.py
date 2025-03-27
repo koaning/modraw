@@ -1,9 +1,11 @@
 # /// script
 # requires-python = ">=3.12"
 # dependencies = [
+#     "anthropic==0.49.0",
 #     "anywidget==0.9.18",
 #     "marimo",
 #     "mohtml==0.1.4",
+#     "pillow==11.1.0",
 # ]
 # ///
 
@@ -34,13 +36,11 @@ def _(widget):
 
 
 @app.cell
-def _(img, widget):
-    img(src=widget.value["base64"])
-    return
-
-
-@app.cell
-def _():
+def _(img, mo, widget):
+    mo.hstack([
+        img(src=widget.value["base64"]),  # Use base64 representation directly with mohtml
+        widget.get_pil()                  # Retreive the Python PIL object instead
+    ])
     return
 
 
