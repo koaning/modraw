@@ -3,7 +3,8 @@ from setuptools import setup, find_packages
 
 
 base_packages = [
-    "anywidget>=0.9.2"
+    "anywidget>=0.9.2", 
+    "pillow>=11.1.0"
 ]
 
 def read(fname):
