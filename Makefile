@@ -21,4 +21,4 @@ clean:
 	rm -rf .ipynb_checkpoints build dist drawdata.egg-info
 
 docs: 
-	marimo export html-wasm notebook.py --output docs/index.html --mode run
+	marimo export html-wasm demo.py --output docs/index.html --mode edit
