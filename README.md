@@ -34,8 +34,14 @@ widget
 ```
 
 ```python
-widget
+# Fetch the doodle and put it in Python
+widget.get_base64()
+widget.get_pil()
 ```
+
+## Related project
+
+This isn't the only tldraw integration with Python, you might also be interested in [jupyter-tldraw](https://github.com/kolibril13/jupyter-tldraw). It's a neat project for sure, and the main difference is that this project tries to target marimo more directly and can also move a bit faster with that in mind. I'm currently employed at marimo, so having a tool that I can easily change is very useful.
 
 ## Development
 
@@ -46,4 +52,4 @@ make install
 make dev
 ```
 
-This assumes that you ran `npm install` beforehand. 
+This assumes that you ran `npm install` beforehand.
